@@ -5,29 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-translate="title">Mahavir ji Scrap Center - Best Vehicle Scrapping in Agra, Mathura And Delhi</title>
     
-    <!-- SEO Meta Tags -->
     <meta name="description" data-translate="metaDescription" content="Mahavir ji Scrap Center: Your trusted partner for old vehicle scrapping in Agra, Mathura, Fatehabad, Fatehpur Sikri, Barhan, Etmadpur, Bharatpur, and Aligarh. We buy old cars, bikes, scooters, trucks, and electric vehicles with valid papers. Get fair pricing and eco-friendly disposal.">
     <meta name="keywords" content="vehicle scrap, car scrap, bike scrap, scooter scrap, truck scrap, electric vehicle scrap, scrap dealer, best price scrap, Agra scrap, Mathura scrap, Fatehabad scrap, Fatehpur Sikri scrap, Barhan scrap, Etmadpur scrap, Bharatpur scrap, Aligarh scrap, old vehicle disposal, vehicle recycling, RTO documentation">
     <meta name="author" data-translate="metaAuthor" content="Mahavir ji Scrap Center">
     <link rel="canonical" href="https://mahavirjiscrapcenter.netlify.app//">
 
-    <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" data-translate="ogTitle" content="Mahavir ji Scrap Center - Best Vehicle Scrapping in Agra & Nearby Cities">
     <meta property="og:description" data-translate="ogDescription" content="Your trusted partner for old vehicle scrapping in Agra, Mathura, Fatehabad, Fatehpur Sikri, Barhan, Etmadpur, Bharatpur, and Aligarh. We buy old cars, bikes, scooters, trucks, and electric vehicles with valid papers.">
     <meta property="og:image" content="https://placehold.co/1200x630/2c3e50/ffffff?text=Sanjay+Jain+Scrap+Center">
     <meta property="og:url" content="https://mahavirjiscrapcenter.netlify.app//">
     <meta property="og:type" content="website">
 
-    <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts - Inter and Noto Sans Devanagari for Hindi -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Noto+Sans+Devanagari:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -252,33 +247,110 @@
                 align-items: center;
             }
         }
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1001; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            width: 90%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .close-button {
+            color: #aaa;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-content label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .modal-content input,
+        .modal-content select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .modal-content button {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1rem;
+        }
+
+        #priceResult {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e0f7fa;
+            border: 1px solid #b2ebf2;
+            border-radius: 8px;
+            text-align: center;
+        }
+        #priceResult p {
+            margin-bottom: 5px;
+        }
+        #priceResult .disclaimer {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body class="leading-relaxed">
 
-    <!-- Language Toggle Button -->
     <button id="languageToggle" class="language-toggle">हिन्दी</button>
 
-    <!-- Message Box for Form Submission -->
     <div id="messageBox" class="rounded-lg" data-translate="messageBox">
         Thank you for your message! We will get back to you soon.
     </div>
 
-    <!-- Header Section -->
     <header class="bg-gray-900 text-white py-4 shadow-xl rounded-b-2xl">
         <div class="container flex justify-between items-center header-content">
             <a href="#about" class="text-4xl font-extrabold text-white transform hover:scale-105 transition-transform duration-300">
                 <span data-translate="brandNamePart1">Mahavir ji</span> <span class="text-orange-500" data-translate="brandNamePart2">Scrap Center</span>
             </a>
             
-            <!-- Mobile Menu Toggle Button (Hamburger) -->
             <button class="menu-toggle text-white focus:outline-none" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
 
-            <!-- Desktop Navigation -->
             <nav class="header-desktop-nav">
                 <ul class="flex space-x-6 text-lg">
                     <li><a href="#about" class="hover:text-orange-400 transition duration-300 py-2 rounded-md hover:bg-gray-700" data-translate="navAbout">About</a></li>
@@ -294,7 +366,6 @@
                 </div>
             </nav>
 
-            <!-- Mobile Navigation -->
             <nav class="header-mobile-nav">
                 <ul class="flex-col text-lg w-full">
                     <li><a href="#about" class="hover:text-orange-400 transition duration-300 py-2 rounded-md hover:bg-gray-700 block" data-translate="navAbout">About</a></li>
@@ -312,7 +383,6 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="gradient-bg text-white text-center py-24 m-4 shadow-2xl">
         <div class="container">
             <h2 class="text-6xl md:text-7xl font-extrabold mb-6 animate-fade-in-up">
@@ -327,7 +397,6 @@
         </div>
     </section>
 
-    <!-- About Us Section -->
     <section id="about" class="bg-white">
         <div class="container text-center">
             <h3 class="text-5xl font-extrabold mb-8 text-gray-800">
@@ -339,14 +408,12 @@
         </div>
     </section>
 
-    <!-- Services Section (Steps) -->
     <section id="services" class="bg-gray-50">
         <div class="container">
             <h3 class="text-5xl font-extrabold text-center mb-16 text-gray-800">
                 <span data-translate="servicesTitlePart1">Our Streamlined</span> <span class="text-gradient" data-translate="servicesTitlePart2">Process</span>
             </h3>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-                <!-- Step 1: Check Vehicle Condition -->
                 <div class="flex flex-col items-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
                     <div class="text-6xl text-orange-500 mb-6 font-bold">1</div>
                     <div class="text-6xl text-blue-600 mb-6">
@@ -357,7 +424,6 @@
                         We conduct a thorough assessment of your vehicle's physical condition to determine its scrap value.
                     </p>
                 </div>
-                <!-- Step 2: Check Documentation -->
                 <div class="flex flex-col items-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
                     <div class="text-6xl text-orange-500 mb-6 font-bold">2</div>
                     <div class="text-6xl text-blue-600 mb-6">
@@ -368,7 +434,6 @@
                         We meticulously verify all necessary papers and legal documents to ensure a hassle-free and legitimate scrapping process.
                     </p>
                 </div>
-                <!-- Step 3: Offer Best Pricing -->
                 <div class="flex flex-col items-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-2">
                     <div class="text-6xl text-orange-500 mb-6 font-bold">3</div>
                     <div class="text-6xl text-blue-600 mb-6">
@@ -383,14 +448,12 @@
         </div>
     </section>
 
-    <!-- Products Section (Vehicles we scrap) -->
     <section id="products" class="bg-white">
         <div class="container">
             <h3 class="text-5xl font-extrabold text-center mb-16 text-gray-800">
                 <span data-translate="productsTitlePart1">Vehicles We</span> <span class="text-gradient" data-translate="productsTitlePart2">Scrap</span>
             </h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                <!-- Product Card: Vehicle 1 -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
                     <img src="vehicle1.jpeg" alt="Vehicle 1 for Scrap" data-translate="product1Alt" class="w-full h-48 object-cover object-center">
                     <div class="p-6">
@@ -399,7 +462,6 @@
                         <p class="text-orange-600 font-bold text-sm" data-translate="productValidPapers">Valid Papers Required</p>
                     </div>
                 </div>
-                <!-- Product Card: Vehicle 2 -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
                     <img src="vehicle2.png" alt="Vehicle 2 for Scrap" data-translate="product2Alt" class="w-full h-48 object-cover object-center">
                     <div class="p-6">
@@ -408,7 +470,6 @@
                         <p class="text-orange-600 font-bold text-sm" data-translate="productValidPapers">Valid Papers Required</p>
                     </div>
                 </div>
-                <!-- Product Card: Vehicle 3 -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
                     <img src="vehicle3.jpg" alt="Vehicle 3 for Scrap" data-translate="product3Alt" class="w-full h-48 object-cover object-center">
                     <div class="p-6">
@@ -417,7 +478,6 @@
                         <p class="text-orange-600 font-bold text-sm" data-translate="productValidPapers">Valid Papers Required</p>
                     </div>
                 </div>
-                <!-- Product Card: Vehicle 4 -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
                     <img src="vehicle4.jpeg" alt="Vehicle 4 for Scrap" data-translate="product4Alt" class="w-full h-48 object-cover object-center">
                     <div class="p-6">
@@ -426,7 +486,6 @@
                         <p class="text-orange-600 font-bold text-sm" data-translate="productValidPapers">Valid Papers Required</p>
                     </div>
                 </div>
-                <!-- Product Card: Vehicle 5 -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
                     <img src="vehicle5.jpeg" alt="Vehicle 5 for Scrap" data-translate="product5Alt" class="w-full h-48 object-cover object-center">
                     <div class="p-6">
@@ -435,7 +494,6 @@
                         <p class="text-orange-600 font-bold text-sm" data-translate="productValidPapers">Valid Papers Required</p>
                     </div>
                 </div>
-                <!-- Product Card: Vehicle 6 -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
                     <img src="vehicle3.jpg" alt="Vehicle 6 for Scrap" data-translate="product6Alt" class="w-full h-48 object-cover object-center">
                     <div class="p-6">
@@ -444,7 +502,6 @@
                         <p class="text-orange-600 font-bold text-sm" data-translate="productValidPapers">Valid Papers Required</p>
                     </div>
                 </div>
-                <!-- Product Card: Vehicle 7 -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
                     <img src="vehicle7.png" alt="Vehicle 7 for Scrap" data-translate="product7Alt" class="w-full h-48 object-cover object-center">
                     <div class="p-6">
@@ -453,7 +510,6 @@
                         <p class="text-orange-600 font-bold text-sm" data-translate="productValidPapers">Valid Papers Required</p>
                     </div>
                 </div>
-                <!-- Product Card: Vehicle 8 -->
                 <div class="bg-gray-50 rounded-xl shadow-ACmd overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
                     <img src="truck.webp" alt="Vehicle 8 for Scrap" data-translate="product8Alt" class="w-full h-48 object-cover object-center">
                     <div class="p-6">
@@ -462,7 +518,6 @@
                         <p class="text-orange-600 font-bold text-sm" data-translate="productValidPapers">Valid Papers Required</p>
                     </div>
                 </div>
-                <!-- Product Card: Vehicle 9 -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
                     <img src="tempo.jpeg" alt="Vehicle 9 for Scrap" data-translate="product9Alt" class="w-full h-48 object-cover object-center">
                     <div class="p-6">
@@ -471,7 +526,6 @@
                         <p class="text-orange-600 font-bold text-sm" data-translate="productValidPapers">Valid Papers Required</p>
                     </div>
                 </div>
-                <!-- Product Card: Vehicle 10 -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
                     <img src="van.webp" alt="Vehicle 10 for Scrap" data-translate="product10Alt" class="w-full h-48 object-cover object-center">
                     <div class="p-6">
@@ -480,7 +534,6 @@
                         <p class="text-orange-600 font-bold text-sm" data-translate="productValidPapers">Valid Papers Required</p>
                     </div>
                 </div>
-                <!-- Product Card: Vehicle 11 -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
                     <img src="bus.jpg" alt="Vehicle 11 for Scrap" data-translate="product11Alt" class="w-full h-48 object-cover object-center">
                     <div class="p-6">
@@ -489,7 +542,6 @@
                         <p class="text-orange-600 font-bold text-sm" data-translate="productValidPapers">Valid Papers Required</p>
                     </div>
                 </div>
-                <!-- Product Card: Vehicle 12 -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
                     <img src="other.png" alt="Vehicle 12 for Scrap" data-translate="product12Alt" class="w-full h-48 object-cover object-center">
                     <div class="p-6">
@@ -502,14 +554,12 @@
         </div>
     </section>
 
-    <!-- Buy&Sell Old Vehicles Section -->
     <section id="buysell" class="bg-gray-50">
         <div class="container">
             <h3 class="text-5xl font-extrabold text-center mb-16 text-gray-800">
                 <span data-translate="buySellTitlePart1">Buy & Sell</span> <span class="text-gradient" data-translate="buySellTitlePart2">Old Vehicles</span>
             </h3>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Buy Section -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
                     <img src="buysell.png" alt="buy old vehicles" data-translate="buySellBuyAlt" class="w-full h-48 object-cover object-center">
                     <div class="p-6">
@@ -518,14 +568,16 @@
                             <p class="text-lg text-gray-600 mb-4" data-translate="buySellBuyDescription">
                                 We buy old vehicles for reselling and scrapping in Agra, Mathura, Delhi, Firozabad, Etmadpur, Etah, Etawah, Fatehpur Sikri, and other regions in Uttar Pradesh. We offer a good price after thoroughly checking the vehicle's condition.
                             </p>
-                            <button class="gradient-button text-white font-bold py-3 px-6 rounded-lg shadow-md text-xl" onclick="window.location.href='#contact'" data-translate="buySellButton">
+                            <button id="calculatePriceButton" class="gradient-button text-white font-bold py-3 px-6 rounded-lg shadow-md text-xl mt-4" data-translate="calculatePriceButton">
+                                Calculate Price
+                            </button>
+                            <button class="gradient-button text-white font-bold py-3 px-6 rounded-lg shadow-md text-xl mt-4" onclick="window.location.href='#contact'" data-translate="buySellButton">
                                 Get a Quote
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Sell Section -->
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
                     <img src="buysell.png" alt="Sell old vehicles" data-translate="buySellSellAlt" class="w-full h-48 object-cover object-center">
                     <div class="p-6">
@@ -544,14 +596,74 @@
         </div>
     </section>
 
-    <!-- Contact Us Section -->
+    <div id="priceCalculatorModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h3 class="text-3xl font-semibold mb-6 text-gray-800 text-center" data-translate="priceCalculatorTitle">Calculate Your Vehicle Price</h3>
+            <form id="priceCalcForm" class="space-y-4">
+                <div>
+                    <label for="vehicleWeight" data-translate="weightLabel">Weight (in kg):</label>
+                    <input type="number" id="vehicleWeight" required min="1" step="any">
+                </div>
+                <div>
+                    <label for="vehicleType" data-translate="vehicleTypeLabel">Vehicle Type:</label>
+                    <select id="vehicleType" required>
+                        <option value="" data-translate="selectVehicleType">Select Type</option>
+                        <option value="car" data-translate="typeCar">Car</option>
+                        <option value="bike" data-translate="typeBike">Bike</option>
+                        <option value="truck" data-translate="typeTruck">Truck</option>
+                        <option value="scooter" data-translate="typeScooter">Scooter</option>
+                        <option value="bus" data-translate="typeBus">Bus</option>
+                        <option value="other" data-translate="typeOther">Other</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="vehicleModel" data-translate="modelLabel">Model:</label>
+                    <input type="text" id="vehicleModel">
+                </div>
+                <div>
+                    <label for="vehicleYear" data-translate="yearLabel">Manufacturing Year:</label>
+                    <input type="number" id="vehicleYear" min="1900" max="2025">
+                </div>
+                <div>
+                    <label for="vehicleCondition" data-translate="conditionLabel">Overall Condition:</label>
+                    <select id="vehicleCondition" required>
+                        <option value="" data-translate="selectCondition">Select Condition</option>
+                        <option value="excellent" data-translate="conditionExcellent">Excellent</option>
+                        <option value="good" data-translate="conditionGood">Good</option>
+                        <option value="fair" data-translate="conditionFair">Fair</option>
+                        <option value="poor" data-translate="conditionPoor">Poor</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="engineCondition" data-translate="engineConditionLabel">Engine Condition:</label>
+                    <select id="engineCondition" required>
+                        <option value="" data-translate="selectEngineCondition">Select Engine Condition</option>
+                        <option value="working" data-translate="engineWorking">Working</option>
+                        <option value="notWorking" data-translate="engineNotWorking">Not Working</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="vehicleCompany" data-translate="companyLabel">Company:</label>
+                    <input type="text" id="vehicleCompany">
+                </div>
+                <button type="button" id="calculateBtn" class="gradient-button text-white font-bold py-3 px-6 rounded-lg shadow-md text-xl" data-translate="calculateButton">
+                    Calculate Price
+                </button>
+            </form>
+            <div id="priceResult" class="hidden">
+                <p class="text-2xl font-bold" data-translate="estimatedPrice">Estimated Price: <span id="displayPrice">₹0</span></p>
+                <p class="disclaimer" data-translate="priceDisclaimer">Disclaimer: This is an estimated rate based on the information provided and is for idea purposes only. The accurate rate may be less than or more than this. For an accurate rate, please call us.</p>
+            </div>
+        </div>
+    </div>
+
     <section id="contact" class="bg-gray-50">
         <div class="container">
             <h3 class="text-5xl font-extrabold text-center mb-16 text-gray-800">
                 <span data-translate="contactTitlePart1">Get in</span> <span class="text-gradient" data-translate="contactTitlePart2">Touch</span>
             </h3>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Contact Form -->
                 <div class="bg-white p-8 rounded-xl shadow-lg">
                     <h4 class="text-3xl font-semibold mb-6 text-gray-800" data-translate="contactFormTitle">Send Us a Message</h4>
                     <form id="contactForm" class="space-y-6" netlify >
@@ -585,7 +697,6 @@
                     </p>
                 </div>
 
-                <!-- Contact Details & Address -->
                 <div class="bg-white p-8 rounded-xl shadow-lg">
                     <h4 class="text-3xl font-semibold mb-6 text-gray-800" data-translate="contactDetailsTitle">Contact Details</h4>
                     <div class="space-y-8">
@@ -638,7 +749,6 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
     <footer class="bg-gray-900 text-white py-8 rounded-t-2xl mt-8 shadow-inner">
         <div class="container text-center text-gray-400">
             <p class="mb-4" data-translate="footerText">© 2025 Mahavir ji Scrap Center. All rights reserved.</p>
@@ -755,6 +865,36 @@
                 buySellSellTitle: "Sell Old Vehicles",
                 buySellSellDescription: "We sell good condition old vehicles all over India. Each vehicle is thoroughly inspected to ensure quality and reliability for our customers.",
                 buySellButton: "Get a Quote",
+                calculatePriceButton: "Calculate Your Vehicle Price",
+
+                // Price Calculator Modal
+                priceCalculatorTitle: "Calculate Your Vehicle Price",
+                weightLabel: "Weight (in kg):",
+                vehicleTypeLabel: "Vehicle Type:",
+                selectVehicleType: "Select Type",
+                typeCar: "Car",
+                typeBike: "Bike",
+                typeTruck: "Truck",
+                typeScooter: "Scooter",
+                typeBus: "Bus",
+                typeOther: "Other",
+                modelLabel: "Model:",
+                yearLabel: "Manufacturing Year:",
+                conditionLabel: "Overall Condition:",
+                selectCondition: "Select Condition",
+                conditionExcellent: "Excellent",
+                conditionGood: "Good",
+                conditionFair: "Fair",
+                conditionPoor: "Poor",
+                engineConditionLabel: "Engine Condition:",
+                selectEngineCondition: "Select Engine Condition",
+                engineWorking: "Working",
+                engineNotWorking: "Not Working",
+                companyLabel: "Company:",
+                calculateButton: "Calculate Price",
+                estimatedPrice: "Estimated Price:",
+                priceDisclaimer: "Disclaimer: This is an estimated rate based on the information provided and is for idea purposes only. The accurate rate may be less than or more than this. For an accurate rate, please call us.",
+
 
                 // Contact Section
                 contactTitlePart1: "Get in",
@@ -872,6 +1012,35 @@
                 buySellSellTitle: "पुराने वाहन बेचें",
                 buySellSellDescription: "हम पूरे भारत में अच्छी स्थिति वाले पुराने वाहनों को बेचते हैं। प्रत्येक वाहन की गुणवत्ता और विश्वसनीयता सुनिश्चित करने के लिए पूरी तरह से जांच की जाती है।",
                 buySellButton: "कोटेशन प्राप्त करें",
+                calculatePriceButton: "अपने वाहन की कीमत की गणना करें",
+
+                // Price Calculator Modal
+                priceCalculatorTitle: "अपने वाहन की कीमत की गणना करें",
+                weightLabel: "वजन (किलोग्राम में):",
+                vehicleTypeLabel: "वाहन का प्रकार:",
+                selectVehicleType: "प्रकार चुनें",
+                typeCar: "कार",
+                typeBike: "बाइक",
+                typeTruck: "ट्रक",
+                typeScooter: "स्कूटर",
+                typeBus: "बस",
+                typeOther: "अन्य",
+                modelLabel: "मॉडल:",
+                yearLabel: "निर्माण वर्ष:",
+                conditionLabel: "समग्र स्थिति:",
+                selectCondition: "स्थिति चुनें",
+                conditionExcellent: "उत्कृष्ट",
+                conditionGood: "अच्छा",
+                conditionFair: "ठीक",
+                conditionPoor: "खराब",
+                engineConditionLabel: "इंजन की स्थिति:",
+                selectEngineCondition: "इंजन की स्थिति चुनें",
+                engineWorking: "चालू",
+                engineNotWorking: "बंद",
+                companyLabel: "कंपनी:",
+                calculateButton: "कीमत की गणना करें",
+                estimatedPrice: "अनुमानित कीमत:",
+                priceDisclaimer: "अस्वीकरण: यह प्रदान की गई जानकारी के आधार पर एक अनुमानित दर है और केवल एक विचार के उद्देश्य से है। सटीक दर इससे कम या अधिक हो सकती है। सटीक दर के लिए, कृपया हमें कॉल करें।",
 
                 // Contact Section
                 contactTitlePart1: "संपर्क में",
@@ -951,6 +1120,83 @@
                 }, 3500);
 
                 contactForm.reset();
+            });
+
+            // Vehicle Price Calculator Modal functionality
+            const calculatePriceButton = document.getElementById('calculatePriceButton');
+            const priceCalculatorModal = document.getElementById('priceCalculatorModal');
+            const closeButton = priceCalculatorModal.querySelector('.close-button');
+            const calculateBtn = document.getElementById('calculateBtn');
+            const priceResult = document.getElementById('priceResult');
+            const displayPrice = document.getElementById('displayPrice');
+
+            calculatePriceButton.addEventListener('click', () => {
+                priceCalculatorModal.style.display = 'flex'; // Use flex to center the modal
+                priceResult.classList.add('hidden'); // Hide previous result
+                document.getElementById('priceCalcForm').reset(); // Reset form fields
+            });
+
+            closeButton.addEventListener('click', () => {
+                priceCalculatorModal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target == priceCalculatorModal) {
+                    priceCalculatorModal.style.display = 'none';
+                }
+            });
+
+            calculateBtn.addEventListener('click', () => {
+                const weight = parseFloat(document.getElementById('vehicleWeight').value);
+                const vehicleType = document.getElementById('vehicleType').value;
+                const year = parseInt(document.getElementById('vehicleYear').value);
+                const condition = document.getElementById('vehicleCondition').value;
+                const engineCondition = document.getElementById('engineCondition').value;
+                const model = document.getElementById('vehicleModel').value;
+                const company = document.getElementById('vehicleCompany').value;
+
+                if (isNaN(weight) || weight <= 0 || !vehicleType || !condition || !engineCondition) {
+                    alert(translations[currentLanguage]['fillAllFields']); // Alert for missing required fields
+                    return;
+                }
+
+                let basePrice = weight * 15; // Base price 15 Rs/kg
+
+                // Adjust based on engine condition
+                if (engineCondition === 'working') {
+                    basePrice *= 1.2; // 20% more for working engine
+                } else {
+                    basePrice *= 0.8; // 20% less for not working engine
+                }
+
+                // Adjust based on overall condition
+                if (condition === 'excellent') {
+                    basePrice *= 1.15; // 15% more
+                } else if (condition === 'good') {
+                    basePrice *= 1.05; // 5% more
+                } else if (condition === 'poor') {
+                    basePrice *= 0.7; // 30% less
+                }
+
+                // Adjust based on year (older cars might fetch less)
+                const currentYear = new Date().getFullYear();
+                if (year && year < currentYear) {
+                    const age = currentYear - year;
+                    basePrice -= (age * 50); // Deduct 50 Rs for each year older
+                    if (basePrice < 0) basePrice = 0; // Ensure price doesn't go negative
+                }
+
+                // Minor adjustments for vehicle type (example, can be more detailed)
+                if (vehicleType === 'truck' || vehicleType === 'bus') {
+                    basePrice *= 1.1; // Trucks/Buses might have slightly higher base value per kg due to components
+                } else if (vehicleType === 'bike' || vehicleType === 'scooter') {
+                    basePrice *= 0.9; // Bikes/Scooters might have slightly lower base value per kg
+                }
+
+                // Company and Model specific adjustments could be added here if you have a database/rules for them
+
+                displayPrice.textContent = `₹${basePrice.toFixed(2)}`;
+                priceResult.classList.remove('hidden');
             });
         });
 
