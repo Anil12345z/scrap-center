@@ -15,7 +15,7 @@ Installation
 To run this project locally, follow these steps:
 
 Clone the Repository:
-git clone https://github.com/your-username/mahavir-ji-scrap-center.git
+git clone https://github.com/your-username/scrap-center.git
 cd mahavir-ji-scrap-center
 
 
