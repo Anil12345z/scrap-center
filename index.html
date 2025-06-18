@@ -463,7 +463,7 @@
                     </div>
                 </div>
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
-                    <img src="vehicle2.png" alt="Vehicle 2 for Scrap" data-translate="product2Alt" class="w-full h-48 object-cover object-center">
+                    <img src="vehicle2.webp" alt="Vehicle 2 for Scrap" data-translate="product2Alt" class="w-full h-48 object-cover object-center">
                     <div class="p-6">
                         <h4 class="text-2xl font-semibold mb-2 text-gray-800" data-translate="product2Title">Bikes</h4>
                         <p class="text-gray-600 text-sm mb-4" data-translate="product2Description">Motorcycles and two-wheelers of all types.</p>
@@ -563,14 +563,11 @@
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
                     <img src="buysell.png" alt="buy old vehicles" data-translate="buySellBuyAlt" class="w-full h-48 object-cover object-center">
                     <div class="p-6">
-                        <h4 class="text-3xl font-semibold mb-6 text-gray-800 cursor-pointer" onclick="toggleBuyDetails()" data-translate="buySellBuyTitle">Buy Old Vehicles</h4>
-                        <div id="buyDetails" class="hidden">
+                        <h4 class="text-3xl font-semibold mb-6 text-gray-800 cursor-pointer" data-translate="buySellBuyTitle">Buy Old Vehicles</h4>
+                        <div id="buyDetails" >
                             <p class="text-lg text-gray-600 mb-4" data-translate="buySellBuyDescription">
                                 We buy old vehicles for reselling and scrapping in Agra, Mathura, Delhi, Firozabad, Etmadpur, Etah, Etawah, Fatehpur Sikri, and other regions in Uttar Pradesh. We offer a good price after thoroughly checking the vehicle's condition.
                             </p>
-                            <button id="calculatePriceButton" class="gradient-button text-white font-bold py-3 px-6 rounded-lg shadow-md text-xl mt-4" data-translate="calculatePriceButton">
-                                Calculate Price
-                            </button>
                             <button class="gradient-button text-white font-bold py-3 px-6 rounded-lg shadow-md text-xl mt-4" onclick="window.location.href='#contact'" data-translate="buySellButton">
                                 Get a Quote
                             </button>
@@ -581,8 +578,8 @@
                 <div class="bg-gray-50 rounded-xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 transform hover:scale-105">
                     <img src="buysell.png" alt="Sell old vehicles" data-translate="buySellSellAlt" class="w-full h-48 object-cover object-center">
                     <div class="p-6">
-                        <h4 class="text-3xl font-semibold mb-6 text-gray-800 cursor-pointer" onclick="toggleSellDetails()" data-translate="buySellSellTitle">Sell Old Vehicles</h4>
-                        <div id="sellDetails" class="hidden">
+                        <h4 class="text-3xl font-semibold mb-6 text-gray-800 cursor-pointer" data-translate="buySellSellTitle">Sell Old Vehicles</h4>
+                        <div id="sellDetails">
                             <p class="text-lg text-gray-600 mb-4" data-translate="buySellSellDescription">
                                 We sell good condition old vehicles all over India. Each vehicle is thoroughly inspected to ensure quality and reliability for our customers.
                             </p>
@@ -596,64 +593,92 @@
         </div>
     </section>
 
-    <div id="priceCalculatorModal" class="modal">
+
+    <!-- Completed Buy/Sell Section with Price Estimator -->
+    <section id="calculatesection" class="gradient-bg text-white text-center py-24 m-4 shadow-2xl">
+        <div class="container text-center">
+            <h2 class="text-5xl font-extrabold mb-8">
+                <span data-translate="calculatesectionTitlePart1">Get an Instant</span> <span class="text-orange-300" data-translate="calculatesectionTitlePart2">Price Estimate</span>
+            </h2>
+            <p class="text-xl md:text-2xl mb-10 opacity-90" data-translate="calculatesectionDescription">
+                Curious about your vehicle's scrap value? Use our simple calculator to get an online estimate.
+            </p>
+            <button id="openModalBtn" class="gradient-button text-white font-extrabold py-4 px-10 rounded-full shadow-xl text-xl" data-translate="calculatePriceButton">
+                Calculate Your vehicle Price
+            </button>
+        </div>
+    </section>
+
+    <!-- Price Estimator Modal -->
+    <div id="priceModal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h3 class="text-3xl font-semibold mb-6 text-gray-800 text-center" data-translate="priceCalculatorTitle">Calculate Your Vehicle Price</h3>
-            <form id="priceCalcForm" class="space-y-4">
-                <div>
-                    <label for="vehicleWeight" data-translate="weightLabel">Weight (in kg):</label>
-                    <input type="number" id="vehicleWeight" required min="1" step="any">
-                </div>
-                <div>
-                    <label for="vehicleType" data-translate="vehicleTypeLabel">Vehicle Type:</label>
-                    <select id="vehicleType" required>
-                        <option value="" data-translate="selectVehicleType">Select Type</option>
-                        <option value="car" data-translate="typeCar">Car</option>
-                        <option value="bike" data-translate="typeBike">Bike</option>
-                        <option value="truck" data-translate="typeTruck">Truck</option>
-                        <option value="scooter" data-translate="typeScooter">Scooter</option>
-                        <option value="bus" data-translate="typeBus">Bus</option>
-                        <option value="other" data-translate="typeOther">Other</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="vehicleModel" data-translate="modelLabel">Model:</label>
-                    <input type="text" id="vehicleModel">
-                </div>
-                <div>
-                    <label for="vehicleYear" data-translate="yearLabel">Manufacturing Year:</label>
-                    <input type="number" id="vehicleYear" min="1900" max="2025">
-                </div>
-                <div>
-                    <label for="vehicleCondition" data-translate="conditionLabel">Overall Condition:</label>
-                    <select id="vehicleCondition" required>
-                        <option value="" data-translate="selectCondition">Select Condition</option>
-                        <option value="excellent" data-translate="conditionExcellent">Excellent</option>
-                        <option value="good" data-translate="conditionGood">Good</option>
-                        <option value="fair" data-translate="conditionFair">Fair</option>
-                        <option value="poor" data-translate="conditionPoor">Poor</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="engineCondition" data-translate="engineConditionLabel">Engine Condition:</label>
-                    <select id="engineCondition" required>
-                        <option value="" data-translate="selectEngineCondition">Select Engine Condition</option>
-                        <option value="working" data-translate="engineWorking">Working</option>
-                        <option value="notWorking" data-translate="engineNotWorking">Not Working</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="vehicleCompany" data-translate="companyLabel">Company:</label>
-                    <input type="text" id="vehicleCompany">
-                </div>
-                <button type="button" id="calculateBtn" class="gradient-button text-white font-bold py-3 px-6 rounded-lg shadow-md text-xl" data-translate="calculateButton">
-                    Calculate Price
-                </button>
+            <h2 class="text-2xl font-bold mb-6 text-center" data-translate="modalTitle">Scrap Price Estimator</h2>
+            <form id="priceEstimatorForm">
+                <!-- Vehicle Type -->
+                <label for="vehicleType" data-translate="modalVehicleType">Vehicle Type:</label>
+                <select id="vehicleType" name="vehicleType">
+                    <option value="bike" data-translate="modalTypeBike">Bike</option>
+                    <option value="scooter" data-translate="modalTypeScooter">Scooter</option>
+                    <option value="car" data-translate="modalTypeCar">Car</option> 
+                    <option value="van" data-translate="modalTypeVan">Van</option> 
+                    <option value="bus" data-translate="modalTypeBus">Bus</option>      
+                    <option value="truck" data-translate="modalTypeTruck">Truck</option>
+                    <option value="electric" data-translate="modalTypeElectric">Electric vehicle</option>
+                    <option value="other" data-translate="modalTypeOther">Other</option>
+                </select>
+
+                <!-- Vehicle Company -->
+                <label for="vehicleCompany" data-translate="modalVehicleCompany">Vehicle Company:</label>
+                <select id="vehicleCompany" name="vehicleCompany">
+                    <option value="tata" data-translate="vehicleCompany_tata">Tata Motors</option>
+                    <option value="mahindra" data-translate="vehicleCompany_mahindra">Mahindra</option>
+                    <option value="maruti" data-translate="vehicleCompany_maruti">Maruti Suzuki</option>
+                    <option value="honda" data-translate="vehicleCompany_honda">Honda</option>
+                    <option value="hyundai" data-translate="vehicleCompany_hyundai">Hyundai</option>
+                    <option value="kia" data-translate="vehicleCompany_kia">Kia</option>
+                    <option value="toyota" data-translate="vehicleCompany_toyota">Toyota</option>
+                    <option value="mg" data-translate="vehicleCompany_mg">MG Motor</option>
+                    <option value="bajaj" data-translate="vehicleCompany_bajaj">Bajaj</option>
+                    <option value="hero" data-translate="vehicleCompany_hero">Hero MotoCorp</option>
+                    <option value="tvs" data-translate="vehicleCompany_tvs">TVS</option>
+                    <option value="royal_enfield" data-translate="vehicleCompany_royal_enfield">Royal Enfield</option>
+                    <option value="ola" data-translate="vehicleCompany_ola">Ola Electric</option>
+                    <option value="ather" data-translate="vehicleCompany_ather">Ather Energy</option>
+                    <option value="nissan" data-translate="vehicleCompany_nissan">Nissan</option>
+                    <option value="renault" data-translate="vehicleCompany_renault">Renault</option>
+                    <option value="skoda" data-translate="vehicleCompany_skoda">Skoda</option>
+                    <option value="volkswagen" data-translate="vehicleCompany_volkswagen">Volkswagen</option>
+                    <option value="force" data-translate="vehicleCompany_force">Force Motors</option>
+                    <option value="ashok_leyland" data-translate="vehicleCompany_ashok_leyland">Ashok Leyland</option>
+                    <option value="other" data-translate="vehicleCompany_other">Other</option>
+                </select>
+
+                <label for="vehicleYear" data-translate="modalVehicleYear">Year of Manufacture:</label>
+                <input type="number" id="vehicleYear" name="vehicleYear" min="1950" max="2025" placeholder="e.g., 2010" required>
+                
+                <label for="generalCondition" data-translate="modalCondition">General Condition:</label>
+                <select id="generalCondition" name="generalCondition">
+                   <option value="poor" data-translate="modalConditionPoor">Poor</option>
+                    <option value="average" data-translate="modalConditionAverage">Average</option>
+                    <option value="good" data-translate="modalConditionGood">Good</option>
+                    <option value="excellent" data-translate="modalConditionExcellent">Excellent</option>
+                </select>
+
+                <label for="engineCondition" data-translate="engineConditionLabel">Engine or battery Condition:</label>
+                <select id="engineCondition" name="engineCondition">
+                   <option value="engineWorking" data-translate="engineWorking">Working</option>
+                   <option value="engineNotWorking" data-translate="engineNotWorking">Not working</option>
+                </select>
+
+                <button type="submit" class="gradient-button text-white font-extrabold py-4 px-10 rounded-full shadow-xl text-xl" data-translate="modalCalculateButton">Calculate</button>
             </form>
             <div id="priceResult" class="hidden">
-                <p class="text-2xl font-bold" data-translate="estimatedPrice">Estimated Price: <span id="displayPrice">₹0</span></p>
-                <p class="disclaimer" data-translate="priceDisclaimer">Disclaimer: This is an estimated rate based on the information provided and is for idea purposes only. The accurate rate may be less than or more than this. For an accurate rate, please call us.</p>
+                <p data-translate="modalEstimatedPrice">Estimated Price:</p>
+                <p id="displayPrice" class="text-2xl font-bold text-green-600"></p>
+                <p class="disclaimer" data-translate="modalDisclaimer">This is an approximate value. The final price depends on physical inspection , for final price call us : <a href="tel:+919760476830" class="hover:text-orange-400 transition duration-300 text-xl">
+                    <i class="fas fa-phone-alt"></i>
+                </a></p>
             </div>
         </div>
     </div>
@@ -865,35 +890,62 @@
                 buySellSellTitle: "Sell Old Vehicles",
                 buySellSellDescription: "We sell good condition old vehicles all over India. Each vehicle is thoroughly inspected to ensure quality and reliability for our customers.",
                 buySellButton: "Get a Quote",
-                calculatePriceButton: "Calculate Your Vehicle Price",
+              
 
                 // Price Calculator Modal
-                priceCalculatorTitle: "Calculate Your Vehicle Price",
-                weightLabel: "Weight (in kg):",
-                vehicleTypeLabel: "Vehicle Type:",
-                selectVehicleType: "Select Type",
-                typeCar: "Car",
-                typeBike: "Bike",
-                typeTruck: "Truck",
-                typeScooter: "Scooter",
-                typeBus: "Bus",
-                typeOther: "Other",
-                modelLabel: "Model:",
-                yearLabel: "Manufacturing Year:",
-                conditionLabel: "Overall Condition:",
-                selectCondition: "Select Condition",
-                conditionExcellent: "Excellent",
-                conditionGood: "Good",
-                conditionFair: "Fair",
-                conditionPoor: "Poor",
-                engineConditionLabel: "Engine Condition:",
-                selectEngineCondition: "Select Engine Condition",
+        
+                priceCalculatorTitle: "Calculate Price",
+                calculatePriceButton: "Calculate Your Vehicle Price",
+                calculatesectionTitlePart1: "Get an Instant",
+                calculatesectionTitlePart2: "Price Estimate",
+                calculatesectionDescription: "Curious about your vehicle's scrap value? Use our simple calculator to get an online estimate.",
+
+                modalTitle: "Scrap Price Estimator",
+                modalVehicleType: "Vehicle Type:",
+                modalTypeBike: "Bike",
+                modalTypeScooter: "Scooter",
+                modalTypeCar: "Car",
+                modalTypeTruck: "Truck",
+                modalTypeVan: "Van",
+                modalTypeBus: "Bus",
+                modalTypeElectric: "Electric vehicle",
+                modalTypeOther: "Other",
+                modalVehicleYear: "Year of Manufacture:",
+                modalCondition: "General Condition:",
+                modalConditionPoor: "Poor",
+                modalConditionAverage: "Average",
+                modalConditionGood: "Good",
+                modalConditionExcellent: "Excellent",
+                engineConditionLabel: "Engine or battery Condition:",
                 engineWorking: "Working",
                 engineNotWorking: "Not Working",
-                companyLabel: "Company:",
-                calculateButton: "Calculate Price",
-                estimatedPrice: "Estimated Price:",
-                priceDisclaimer: "Disclaimer: This is an estimated rate based on the information provided and is for idea purposes only. The accurate rate may be less than or more than this. For an accurate rate, please call us.",
+                modalCalculateButton: "Calculate",
+                modalEstimatedPrice: "Estimated Price:",
+                modalDisclaimer: "Disclaimer: This is an estimated rate based on the information provided and is for idea purposes only. The accurate rate may be less than or more than this. For an accurate rate, please call us." ,
+
+                modalVehicleCompany: "Vehicle Company:",
+                vehicleCompany_tata: "Tata Motors",
+                vehicleCompany_mahindra: "Mahindra",
+                vehicleCompany_maruti: "Maruti Suzuki",
+                vehicleCompany_honda: "Honda",
+                vehicleCompany_hyundai: "Hyundai",
+                vehicleCompany_kia: "Kia",
+                vehicleCompany_toyota: "Toyota",
+                vehicleCompany_mg: "MG Motor",
+                vehicleCompany_bajaj: "Bajaj",
+                vehicleCompany_hero: "Hero MotoCorp",
+                vehicleCompany_tvs: "TVS",
+                vehicleCompany_royal_enfield: "Royal Enfield",
+                vehicleCompany_ola: "Ola Electric",
+                vehicleCompany_ather: "Ather Energy",
+                vehicleCompany_nissan: "Nissan",
+                vehicleCompany_renault: "Renault",
+                vehicleCompany_skoda: "Skoda",
+                vehicleCompany_volkswagen: "Volkswagen",
+                vehicleCompany_force: "Force Motors",
+                vehicleCompany_ashok_leyland: "Ashok Leyland",
+                vehicleCompany_other: "Other" ,
+
 
 
                 // Contact Section
@@ -1012,35 +1064,61 @@
                 buySellSellTitle: "पुराने वाहन बेचें",
                 buySellSellDescription: "हम पूरे भारत में अच्छी स्थिति वाले पुराने वाहनों को बेचते हैं। प्रत्येक वाहन की गुणवत्ता और विश्वसनीयता सुनिश्चित करने के लिए पूरी तरह से जांच की जाती है।",
                 buySellButton: "कोटेशन प्राप्त करें",
-                calculatePriceButton: "अपने वाहन की कीमत की गणना करें",
+               
 
                 // Price Calculator Modal
-                priceCalculatorTitle: "अपने वाहन की कीमत की गणना करें",
-                weightLabel: "वजन (किलोग्राम में):",
-                vehicleTypeLabel: "वाहन का प्रकार:",
-                selectVehicleType: "प्रकार चुनें",
-                typeCar: "कार",
-                typeBike: "बाइक",
-                typeTruck: "ट्रक",
-                typeScooter: "स्कूटर",
-                typeBus: "बस",
-                typeOther: "अन्य",
-                modelLabel: "मॉडल:",
-                yearLabel: "निर्माण वर्ष:",
-                conditionLabel: "समग्र स्थिति:",
-                selectCondition: "स्थिति चुनें",
-                conditionExcellent: "उत्कृष्ट",
-                conditionGood: "अच्छा",
-                conditionFair: "ठीक",
-                conditionPoor: "खराब",
-                engineConditionLabel: "इंजन की स्थिति:",
-                selectEngineCondition: "इंजन की स्थिति चुनें",
+                priceCalculatorTitle: "कीमत की गणना करें",
+                calculatePriceButton: "अपने वाहन की कीमत की गणना करें",
+                calculatesectionTitlePart1: "तुरंत प्राप्त करें",
+                calculatesectionTitlePart2: "मूल्य अनुमान",
+                calculatesectionDescription: "क्या आप अपने वाहन के स्क्रैप मूल्य के बारे में जानना चाहते हैं? हमारी सरल कैलकुलेटर का उपयोग करें और ऑनलाइन अनुमान प्राप्त करें।",
+
+                modalTitle: "स्क्रैप मूल्य गणक",
+                modalVehicleType: "वाहन का प्रकार:",
+                modalTypeBike: "बाइक",
+                modalTypeScooter: "स्कूटर",
+                modalTypeCar: "कार",
+                modalTypeTruck: "ट्रक",
+                modalTypeVan: "वैन",
+                modalTypeBus: "बस",
+                modalTypeElectric: "इलेक्ट्रिक वाहन",
+                modalTypeOther: "अन्य",
+                modalVehicleYear: "निर्माण वर्ष:",
+                modalCondition: "सामान्य स्थिति:",
+                modalConditionPoor: "खराब",
+                modalConditionAverage: "औसत",
+                modalConditionGood: "अच्छी",
+                modalConditionExcellent: "उत्कृष्ट",
+                engineConditionLabel: "इंजन या बैटरी की स्थिति:",
                 engineWorking: "चालू",
                 engineNotWorking: "बंद",
-                companyLabel: "कंपनी:",
-                calculateButton: "कीमत की गणना करें",
-                estimatedPrice: "अनुमानित कीमत:",
-                priceDisclaimer: "अस्वीकरण: यह प्रदान की गई जानकारी के आधार पर एक अनुमानित दर है और केवल एक विचार के उद्देश्य से है। सटीक दर इससे कम या अधिक हो सकती है। सटीक दर के लिए, कृपया हमें कॉल करें।",
+                modalCalculateButton: "गणना करें",
+                modalEstimatedPrice: "अनुमानित मूल्य:",
+                modalDisclaimer: "अस्वीकरण: यह प्रदान की गई जानकारी के आधार पर एक अनुमानित दर है और केवल एक विचार के उद्देश्य से है। सटीक दर इससे कम या अधिक हो सकती है। सटीक दर के लिए, कृपया हमें कॉल करें।",
+
+                modalVehicleCompany: "वाहन कंपनी:",
+                vehicleCompany_tata: "टाटा मोटर्स",
+                vehicleCompany_mahindra: "महिंद्रा",
+                vehicleCompany_maruti: "मारुति सुजुकी",
+                vehicleCompany_honda: "होंडा",
+                vehicleCompany_hyundai: "ह्युंडई",
+                vehicleCompany_kia: "किआ",
+                vehicleCompany_toyota: "टोयोटा",
+                vehicleCompany_mg: "एमजी मोटर",
+                vehicleCompany_bajaj: "बजाज",
+                vehicleCompany_hero: "हीरो मोटोकॉर्प",
+                vehicleCompany_tvs: "टीवीएस",
+                vehicleCompany_royal_enfield: "रॉयल एनफील्ड",
+                vehicleCompany_ola: "ओला इलेक्ट्रिक",
+                vehicleCompany_ather: "एथर एनर्जी",
+                vehicleCompany_nissan: "निसान",
+                vehicleCompany_renault: "रेनॉल्ट",
+                vehicleCompany_skoda: "स्कोडा",
+                vehicleCompany_volkswagen: "फॉक्सवैगन",
+                vehicleCompany_force: "फोर्स मोटर्स",
+                vehicleCompany_ashok_leyland: "अशोक लेलैंड",
+                vehicleCompany_other: "अन्य" ,
+
 
                 // Contact Section
                 contactTitlePart1: "संपर्क में",
@@ -1122,95 +1200,97 @@
                 contactForm.reset();
             });
 
-            // Vehicle Price Calculator Modal functionality
-            const calculatePriceButton = document.getElementById('calculatePriceButton');
-            const priceCalculatorModal = document.getElementById('priceCalculatorModal');
-            const closeButton = priceCalculatorModal.querySelector('.close-button');
-            const calculateBtn = document.getElementById('calculateBtn');
+            // --- Price Estimator Modal Logic ---
+            const modal = document.getElementById('priceModal');
+            const openModalBtn = document.getElementById('openModalBtn');
+            const closeBtn = document.querySelector('.close-button');
+            const priceEstimatorForm = document.getElementById('priceEstimatorForm');
             const priceResult = document.getElementById('priceResult');
             const displayPrice = document.getElementById('displayPrice');
-
-            calculatePriceButton.addEventListener('click', () => {
-                priceCalculatorModal.style.display = 'flex'; // Use flex to center the modal
-                priceResult.classList.add('hidden'); // Hide previous result
-                document.getElementById('priceCalcForm').reset(); // Reset form fields
-            });
-
-            closeButton.addEventListener('click', () => {
-                priceCalculatorModal.style.display = 'none';
-            });
-
-            window.addEventListener('click', (event) => {
-                if (event.target == priceCalculatorModal) {
-                    priceCalculatorModal.style.display = 'none';
+            
+            openModalBtn.onclick = () => { modal.style.display = 'flex'; }
+            closeBtn.onclick = () => { modal.style.display = 'none'; }
+            window.onclick = (event) => {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
                 }
-            });
-
-            calculateBtn.addEventListener('click', () => {
-                const weight = parseFloat(document.getElementById('vehicleWeight').value);
+            }
+            
+            priceEstimatorForm.addEventListener('submit', (e) => {
+                e.preventDefault();
                 const vehicleType = document.getElementById('vehicleType').value;
-                const year = parseInt(document.getElementById('vehicleYear').value);
-                const condition = document.getElementById('vehicleCondition').value;
+                const vehicleYear = parseInt(document.getElementById('vehicleYear').value);
+                const generalCondition = document.getElementById('generalCondition').value;
                 const engineCondition = document.getElementById('engineCondition').value;
-                const model = document.getElementById('vehicleModel').value;
-                const company = document.getElementById('vehicleCompany').value;
+                const vehicleCompany = document.getElementById('vehicleCompany').value;
+                
 
-                if (isNaN(weight) || weight <= 0 || !vehicleType || !condition || !engineCondition) {
-                    alert(translations[currentLanguage]['fillAllFields']); // Alert for missing required fields
-                    return;
+                let basePrice = 0;
+                // Base prices based on vehicle type
+                switch(vehicleType) {
+                    case 'car': basePrice = 35000; break;
+                    case 'bike': basePrice = 4000; break;
+                    case 'truck': basePrice = 140000; break;
+                    case 'scooter': basePrice = 3500; break;
+                    case 'van': basePrice = 40000; break;
+                    case 'bus': basePrice = 100000; break;
+                    case 'electric': basePrice = 3500; break;
+                    case 'other': basePrice = 10000; break;
                 }
 
-                let basePrice = weight * 15; // Base price 15 Rs/kg
-
-                // Adjust based on engine condition
-                if (engineCondition === 'working') {
-                    basePrice *= 1.2; // 20% more for working engine
-                } else {
-                    basePrice *= 0.8; // 20% less for not working engine
-                }
-
-                // Adjust based on overall condition
-                if (condition === 'excellent') {
-                    basePrice *= 1.15; // 15% more
-                } else if (condition === 'good') {
-                    basePrice *= 1.05; // 5% more
-                } else if (condition === 'poor') {
-                    basePrice *= 0.7; // 30% less
-                }
-
-                // Adjust based on year (older cars might fetch less)
+                let calculatedPrice = basePrice;
                 const currentYear = new Date().getFullYear();
-                if (year && year < currentYear) {
-                    const age = currentYear - year;
-                    basePrice -= (age * 50); // Deduct 50 Rs for each year older
-                    if (basePrice < 0) basePrice = 0; // Ensure price doesn't go negative
+                const yearsOld = currentYear - vehicleYear;
+
+                // Adjust price based on age
+                if (yearsOld >= 0) {
+                    if (yearsOld <= 2) { // Newer than 2 years
+                        calculatedPrice *= 3; // 200% bonus
+                    } else if (yearsOld <= 4) { // Newer than 5 years
+                        calculatedPrice *= 2; // 100% bonus
+                    } else if (yearsOld <= 10) { // 6-10 years old
+                        calculatedPrice *= 1.10; // 10% bonus
+                    } else if (yearsOld <= 15) { // 11-15 years old
+                        calculatedPrice *= 1.0; // No bonus/deduction
+                    } else { // Older than 15 years
+                        calculatedPrice *= 1.0; // No bonus/deduction
+                    }
+                }
+                
+                // Adjust price based on condition
+                if (generalCondition === 'excellent') {
+                    calculatedPrice *= 1.25; // 25% bonus for excellent
+                } else if (generalCondition === 'good') {
+                    calculatedPrice *= 1.15; // 15% bonus for good
+                }else {
+                    calculatedPrice *= 1.0; // No bonus/deduction
                 }
 
-                // Minor adjustments for vehicle type (example, can be more detailed)
-                if (vehicleType === 'truck' || vehicleType === 'bus') {
-                    basePrice *= 1.1; // Trucks/Buses might have slightly higher base value per kg due to components
-                } else if (vehicleType === 'bike' || vehicleType === 'scooter') {
-                    basePrice *= 0.9; // Bikes/Scooters might have slightly lower base value per kg
+                 // Adjust price based on engine
+                if (engineCondition === 'engineWorking') {
+                    calculatedPrice *= 1.25; // 25% bonus for excellent
+                } else {
+                    calculatedPrice *= 1.0; // No bonus/deduction
                 }
 
-                // Company and Model specific adjustments could be added here if you have a database/rules for them
+                // Adjust price based on company
+                if (vehicleCompany === 'tata' && engineCondition === 'engineWorking' && (vehicleType == 'car' || vehicleType == 'truck' )  ) {
+                    calculatedPrice *= 1.15; // 15% bonus for excellent
+                }else if (vehicleCompany === 'volkswagen' && engineCondition === 'engineWorking' && (vehicleType == 'car' || vehicleType == 'truck' )  ) {
+                    calculatedPrice *= 1.15; // 15% bonus for excellent
+                }  else if (vehicleCompany === 'tvs' && engineCondition === 'engineWorking' && vehicleType == 'bike' ) {
+                    calculatedPrice *= 1.15; // 15% bonus for good
+                }else if (vehicleCompany === 'royal_enfield' && engineCondition === 'engineWorking' && vehicleType == 'bike' ) {
+                    calculatedPrice *= 1.15; // 15% bonus for good
+                }  else {
+                    calculatedPrice *= 1.0; // No bonus/deduction
+                }
 
-                displayPrice.textContent = `₹${basePrice.toFixed(2)}`;
+                displayPrice.textContent = `₹${calculatedPrice.toFixed(2)}`;
                 priceResult.classList.remove('hidden');
             });
         });
 
-        // Toggle Buy Details
-        function toggleBuyDetails() {
-            const buyDetails = document.getElementById('buyDetails');
-            buyDetails.classList.toggle('hidden');
-        }
-
-        // Toggle Sell Details
-        function toggleSellDetails() {
-            const sellDetails = document.getElementById('sellDetails');
-            sellDetails.classList.toggle('hidden');
-        }
     </script>
 </body>
 </html>
